@@ -23377,6 +23377,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4421525259197088864, guid: 272d416512362184fb71359171b25191, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1621681054}
+    - targetCorrespondingSourceObject: {fileID: 4421525259197088864, guid: 272d416512362184fb71359171b25191, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1621681055}
     - targetCorrespondingSourceObject: {fileID: 7579129374407068758, guid: 272d416512362184fb71359171b25191, type: 3}
       insertIndex: -1
       addedObject: {fileID: 638400680}
@@ -31571,6 +31574,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8eb52165-ded9-4e37-b405-37862a25dd76
     m_ActionName: 'Player/Fire[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1621681055}
+        m_TargetAssemblyTypeName: PlayerBombDropper, Assembly-CSharp
+        m_MethodName: DropBombs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 041a6ad5-39eb-4928-b4ac-815db903b52e
+    m_ActionName: 'Player/DropBomb[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -31593,6 +31612,20 @@ MonoBehaviour:
   gunRight: {fileID: 1064612123}
   fireRate: 0.1
   bulletSpeed: 70
+--- !u!114 &1621681055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268604896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a836d1fdfa87ffd49b993182b32167d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 5069728746296512786, guid: 42b87af42dc516a428baaa626a63064b, type: 3}
+  bombDropPoint: {fileID: 1325954448}
 --- !u!1001 &1622077328
 PrefabInstance:
   m_ObjectHideFlags: 0
