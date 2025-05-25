@@ -5,7 +5,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
-
+    public GameObject prefabAlMorir;
     public Image healthFillImage; 
 
     void Start()
@@ -34,6 +34,11 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject); 
+        if (prefabAlMorir != null)
+        {
+            Instantiate(prefabAlMorir, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject);
     }
 }
