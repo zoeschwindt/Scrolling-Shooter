@@ -7340,11 +7340,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6914194639181709215, guid: 7c7bd35387195cc469e4a64cf00f99a5, type: 3}
   m_PrefabInstance: {fileID: 396821820}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &404749357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1180751772106878923, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
+  m_PrefabInstance: {fileID: 2342084569306994771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &404749358 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4893781370589753649, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
   m_PrefabInstance: {fileID: 2342084569306994771}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &404749361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404749357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b0d1a27bfba43408b5a493dc5fd3cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helicopterTarget: {fileID: 1621681051}
+  detectionRange: 30
+  fireRate: 1
+  bulletPrefab: {fileID: 728230889742716418, guid: 435247583e91f314791d15b967a88ee4, type: 3}
+  firePoint: {fileID: 184392606}
 --- !u!1001 &413927150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15117,16 +15139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1621681051}
-  stopDistance: 20
-  speed: 30.7
-  bulletPrefab: {fileID: 728230889742716418, guid: 89189182ff0ea53449037daa0df341af, type: 3}
-  firePoints:
-  - {fileID: 239161451}
-  - {fileID: 1792127125}
-  fireRate: 1
-  zigzagFrequency: 2
-  zigzagAmplitude: 1
-  obstacleCheckDistance: 5
 --- !u!1001 &796873883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26720,28 +26732,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3692711391219735359, guid: 801ccd61cb6fcb04282039e15519100a, type: 3}
   m_PrefabInstance: {fileID: 1414037075}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1417807996 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8919700125113120325, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
-  m_PrefabInstance: {fileID: 2342084569306994771}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1417807999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417807996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b0d1a27bfba43408b5a493dc5fd3cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helicopterTarget: {fileID: 1621681051}
-  detectionRange: 100
-  fireRate: 1
-  bulletPrefab: {fileID: 728230889742716418, guid: 435247583e91f314791d15b967a88ee4, type: 3}
-  firePoint: {fileID: 184392606}
 --- !u!1001 &1417929644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42404,15 +42394,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4893781370589753649, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0057
+      value: 0.00395
       objectReference: {fileID: 0}
     - target: {fileID: 4893781370589753649, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0051
+      value: 0.00358
       objectReference: {fileID: 0}
     - target: {fileID: 4893781370589753649, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0017
+      value: -0.00257
       objectReference: {fileID: 0}
     - target: {fileID: 4893781370589753649, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42507,9 +42497,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 184392606}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8919700125113120325, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 1180751772106878923, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1417807999}
+      addedObject: {fileID: 404749361}
   m_SourcePrefab: {fileID: 100100000, guid: 2a1ffd637ae25a74292e8f40890f76c5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
