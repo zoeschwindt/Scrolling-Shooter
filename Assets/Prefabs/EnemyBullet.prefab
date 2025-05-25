@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 450f02e3a75230b46b583c9b2562c2f5, type: 3}
       propertyPath: m_Name
-      value: WPN_cal_5_7x28
+      value: EnemyBullet
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 450f02e3a75230b46b583c9b2562c2f5, type: 3}
       propertyPath: m_TagString
-      value: PlayerBullet
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 450f02e3a75230b46b583c9b2562c2f5, type: 3}
       propertyPath: m_LocalScale.x
@@ -77,10 +77,10 @@ PrefabInstance:
       addedObject: {fileID: -3545552294006698521}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 450f02e3a75230b46b583c9b2562c2f5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2222983532420514892}
+      addedObject: {fileID: -3754405358160854701}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 450f02e3a75230b46b583c9b2562c2f5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6388436940370973283}
+      addedObject: {fileID: 2222983532420514892}
   m_SourcePrefab: {fileID: 100100000, guid: 450f02e3a75230b46b583c9b2562c2f5, type: 3}
 --- !u!1 &728230889742716418 stripped
 GameObject:
@@ -114,6 +114,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3754405358160854701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728230889742716418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9e6b4d588bf9044ae72bf87d3425d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 5
+  speed: 40
 --- !u!65 &2222983532420514892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129,22 +143,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.008077667, y: 0.008077667, z: 0.040336054}
   m_Center: {x: -0.000000035390258, y: -0.0000000121071935, z: 0.000000009313226}
---- !u!114 &6388436940370973283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728230889742716418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cbf08c5e1142984db410675261eb594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
