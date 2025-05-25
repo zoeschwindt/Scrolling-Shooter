@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class EnemyTurretShotgun : MonoBehaviour
+public class EnemyShotgun : MonoBehaviour
 {
-    public Transform helicopterTarget;     // El helicóptero (jugador)
-    public float detectionRange = 30f;     // Rango para disparar
+    public Transform helicopterTarget;     // Referencia al helicóptero (enemigo volador)
+    public float detectionRange = 20f;     // Rango para detectar al helicóptero
     public float fireRate = 1f;            // Disparos por segundo
     public GameObject bulletPrefab;        // Prefab de la bala
-    public Transform firePoint;            // El cañón que gira y dispara
+    public Transform firePoint;            // Punto desde donde se dispara
 
     private float nextFireTime = 0f;
 
@@ -17,7 +17,7 @@ public class EnemyTurretShotgun : MonoBehaviour
         float distance = Vector3.Distance(transform.position, helicopterTarget.position);
         if (distance <= detectionRange)
         {
-            AimAtTarget();
+            AimAtHelicopter();
 
             if (Time.time >= nextFireTime)
             {
@@ -27,29 +27,26 @@ public class EnemyTurretShotgun : MonoBehaviour
         }
     }
 
-    void AimAtTarget()
+    void AimAtHelicopter()
     {
-        Vector3 direction = helicopterTarget.position - firePoint.position;
+        Vector3 direction = helicopterTarget.position - transform.position;
 
         if (direction != Vector3.zero)
         {
-            // Gira el cañón para mirar al helicóptero en 3D
-            Quaternion targetRotation = Quaternion.LookRotation(direction.normalized);
-
-            // Rota suavemente hacia el objetivo (puedes cambiar velocidad)
-            firePoint.rotation = Quaternion.Slerp(firePoint.rotation, targetRotation, Time.deltaTime * 10f);
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         }
     }
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(helicopterTarget.position - firePoint.position));
 
+        // Enviamos la dirección al script de la bala
         ShotgunBullet bulletScript = bullet.GetComponent<ShotgunBullet>();
         if (bulletScript != null)
         {
-            // Disparar en la dirección hacia la que apunta el cañón
-            bulletScript.SetDirection(firePoint.forward);
+            bulletScript.SetDirection(helicopterTarget.position);
         }
     }
 }

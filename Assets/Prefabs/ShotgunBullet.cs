@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class ShotgunBullet : MonoBehaviour
 {
-    public float speed = 20f;
-    public float lifetime = 5f;
-
+    public float speed = 25f;
     private Vector3 direction;
 
-    public void SetDirection(Vector3 dir)
+    public void SetDirection(Vector3 targetPosition)
     {
-        direction = dir.normalized;
-        Destroy(gameObject, lifetime);
+        direction = (targetPosition - transform.position).normalized;
     }
 
     void Update()
