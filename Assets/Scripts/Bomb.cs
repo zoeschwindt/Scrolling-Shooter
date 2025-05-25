@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    public float fallSpeed = 20f; // Aumentá este valor para que caiga más rápido
+    public float fallSpeed = 20f; 
 
     void Update()
     {
