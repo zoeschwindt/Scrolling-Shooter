@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Obstacle
   - PlayerBullet
+  - BalaEnemiga
+  - ProyectilSuave
+  - AvionEnemigo
+  - Enemy
   layers:
   - Default
   - TransparentFX

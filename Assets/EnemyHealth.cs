@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
     public GameObject prefabAlMorir;
-    public Image healthFillImage; 
+    public Image healthFillImage;
 
     void Start()
     {
@@ -37,6 +37,12 @@ public class EnemyHealth : MonoBehaviour
         if (prefabAlMorir != null)
         {
             Instantiate(prefabAlMorir, transform.position, Quaternion.identity);
+        }
+
+        // Sumamos punto cuando muere el enemigo
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.AddPoint();
         }
 
         Destroy(gameObject);

@@ -31,5 +31,24 @@ public class Playermovement : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
     }
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("AvionEnemigo"))
+        {
+            GetComponent<PlayerHealth>().TakeDamage(100f);
+        }
+        else if (collision.gameObject.CompareTag("BalaEnemiga"))
+        {
+            GetComponent<PlayerHealth>().TakeDamage(10f);
+        }
+        else if (collision.gameObject.CompareTag("ProyectilSuave"))
+        {
+            GetComponent<PlayerHealth>().TakeDamage(5f);
+        }
+    }
+
+
 }
 

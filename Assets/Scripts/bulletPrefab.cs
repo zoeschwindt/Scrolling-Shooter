@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class bulletPrefab : MonoBehaviour
+public class BalaEnemiga : MonoBehaviour
 {
     public float lifeTime = 5f;
     public float speed = 20f;
+    public float damageAmount = 10f;
 
     private Rigidbody rb;
 
@@ -11,18 +12,26 @@ public class bulletPrefab : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Le damos velocidad en la dirección en la que está rotado el prefab
+        // Usamos velocity (no linearVelocity)
         rb.linearVelocity = transform.forward * speed;
 
-        // Destruir la bala luego de un tiempo
+        // La bala se destruye después de un tiempo
         Destroy(gameObject, lifeTime);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        // Destruir la bala al colisionar con algo
+        // Si choca con el jugador
+        if (other.CompareTag("Player"))
+        {
+            PlayerHealth player = other.GetComponent<PlayerHealth>();
+            if (player != null)
+            {
+                player.TakeDamage(damageAmount);
+            }
+        }
+
+        // Destruimos la bala en cualquier caso
         Destroy(gameObject);
     }
 }
-
-
