@@ -9,22 +9,24 @@ public class Playermovement : MonoBehaviour
     public float tiltSpeed = 5f;
 
     Vector2 moveInput;
+    Rigidbody rb;
 
-    void Update()
+    void Start()
     {
+        rb = GetComponent<Rigidbody>();
+    }
 
+    void FixedUpdate()
+    {
         Vector3 move = new Vector3(moveInput.x, moveInput.y, 0f);
-        transform.Translate(move * moveSpeed * Time.deltaTime, Space.World);
-
-
+        Vector3 newPosition = rb.position + move * moveSpeed * Time.fixedDeltaTime;
+        rb.MovePosition(newPosition);
 
         float targetZRotation = -moveInput.x * tiltAmountZ;
         float targetXRotation = -moveInput.y * tiltAmountX;
 
-
-
         Quaternion targetRotation = Quaternion.Euler(targetXRotation, 0f, targetZRotation);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * tiltSpeed);
+        rb.MoveRotation(Quaternion.Lerp(rb.rotation, targetRotation, Time.fixedDeltaTime * tiltSpeed));
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -32,10 +34,13 @@ public class Playermovement : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
     }
 
-
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("AvionEnemigo"))
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GetComponent<PlayerHealth>().TakeDamage(100f);
+        }
+        else if (collision.gameObject.CompareTag("AvionEnemigo"))
         {
             GetComponent<PlayerHealth>().TakeDamage(100f);
         }
@@ -50,5 +55,5 @@ public class Playermovement : MonoBehaviour
     }
 
 
-}
 
+}

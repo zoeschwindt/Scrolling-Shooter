@@ -727,6 +727,7 @@ GameObject:
   - component: {fileID: 662856520726899392}
   - component: {fileID: 2496728132276341120}
   - component: {fileID: 1126457219693428097}
+  - component: {fileID: 8632509990040781630}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -819,6 +820,29 @@ MonoBehaviour:
   currentHealth: 100
   prefabAlMorir: {fileID: 5069728746296512786, guid: 2886c72df515e9646b49b72b16d688bf, type: 3}
   healthFillImage: {fileID: 7046537928638098598}
+--- !u!136 &8632509990040781630
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772026008788268044}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.6595764
+  m_Height: 7.319153
+  m_Direction: 1
+  m_Center: {x: -0, y: 0, z: -3.1595764}
 --- !u!1 &4914545969019888113
 GameObject:
   m_ObjectHideFlags: 0

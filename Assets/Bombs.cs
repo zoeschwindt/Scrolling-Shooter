@@ -6,10 +6,11 @@ public class Bombs : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Esto usa el mismo ScoreManager que suma puntos cuando muere un enemigo
-            if (ScoreManager.instance != null)
+            // Sumar bomba al jugador
+            PlayerBombDropper bombDropper = other.GetComponent<PlayerBombDropper>();
+            if (bombDropper != null)
             {
-                ScoreManager.instance.AddBombPoint();
+                bombDropper.AddBomb();
             }
 
             Destroy(gameObject);

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5069728746297412882}
   - component: {fileID: 5069728746298511314}
   - component: {fileID: 5069728746287030994}
-  - component: {fileID: 4553058866042285575}
   - component: {fileID: 1431496742970366725}
   - component: {fileID: 5709126944588885955}
   - component: {fileID: -3956273867596473005}
@@ -113,19 +112,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4553058866042285575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5069728746296512786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cbf08c5e1142984db410675261eb594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
 --- !u!54 &1431496742970366725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -186,4 +172,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29fdd36537827d4096cf0dbcbbf5611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 20
+  fallSpeed: 4

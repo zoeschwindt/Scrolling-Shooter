@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2eb2e889a41f45d4c9eddc68d478a441, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -149,6 +153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_05 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -170,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 4782071091596887344, guid: 160a964370e3e4d4f98c45b847f0f63d, type: 3}
       propertyPath: m_Name
       value: delh_prop_02_base (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782071091596887344, guid: 160a964370e3e4d4f98c45b847f0f63d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5190823039119530999, guid: 160a964370e3e4d4f98c45b847f0f63d, type: 3}
       propertyPath: m_RootOrder
@@ -309,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -330,6 +346,10 @@ PrefabInstance:
     - target: {fileID: 447053694534165541, guid: fed9e6eaab9440b4eaf9401c2db15f6d, type: 3}
       propertyPath: m_Name
       value: delh_arch_02_side_pillars_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 447053694534165541, guid: fed9e6eaab9440b4eaf9401c2db15f6d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4624426208158374041, guid: fed9e6eaab9440b4eaf9401c2db15f6d, type: 3}
       propertyPath: m_RootOrder
@@ -469,6 +489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -534,6 +558,10 @@ PrefabInstance:
     - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
       propertyPath: m_Name
       value: delh_foli_05 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -617,6 +645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -694,6 +726,10 @@ PrefabInstance:
     - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
       propertyPath: m_Name
       value: delh_prop_01 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -777,6 +813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -855,6 +895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -921,6 +965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_05 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -942,6 +990,10 @@ PrefabInstance:
     - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_Name
       value: delh_prop_04 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6895866164888710430, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_RootOrder
@@ -1008,6 +1060,10 @@ PrefabInstance:
     - target: {fileID: 1255222513979200545, guid: 2314c5eb25beebb48953f7fc38b831cc, type: 3}
       propertyPath: m_Name
       value: delh_prop_01_fountain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255222513979200545, guid: 2314c5eb25beebb48953f7fc38b831cc, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6798488434943490644, guid: 2314c5eb25beebb48953f7fc38b831cc, type: 3}
       propertyPath: m_RootOrder
@@ -1143,6 +1199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1217,11 +1277,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_arch_02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cc9c686e38f4ce241aa356ccdd0abb59, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc9c686e38f4ce241aa356ccdd0abb59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 976685005046545554}
   m_SourcePrefab: {fileID: 100100000, guid: cc9c686e38f4ce241aa356ccdd0abb59, type: 3}
+--- !u!1 &2664215235413818630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cc9c686e38f4ce241aa356ccdd0abb59, type: 3}
+  m_PrefabInstance: {fileID: 2898163623975911511}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &976685005046545554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664215235413818630}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15.81366, y: 43.84721, z: 30.89599}
+  m_Center: {x: 0.1109314, y: 21.423605, z: -4.3368216}
 --- !u!4 &3437056892306089916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cc9c686e38f4ce241aa356ccdd0abb59, type: 3}
@@ -1299,6 +1392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1361,6 +1458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b9ae02baeab3284f908208243e320cc, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1382,6 +1483,10 @@ PrefabInstance:
     - target: {fileID: 447053694534165541, guid: fed9e6eaab9440b4eaf9401c2db15f6d, type: 3}
       propertyPath: m_Name
       value: delh_arch_02_side_pillars_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 447053694534165541, guid: fed9e6eaab9440b4eaf9401c2db15f6d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4624426208158374041, guid: fed9e6eaab9440b4eaf9401c2db15f6d, type: 3}
       propertyPath: m_RootOrder
@@ -1501,6 +1606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_04 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2eb2e889a41f45d4c9eddc68d478a441, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1522,6 +1631,10 @@ PrefabInstance:
     - target: {fileID: 5691353841312859840, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
       propertyPath: m_Name
       value: delh_foli_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691353841312859840, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8064482115992081926, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
       propertyPath: m_RootOrder
@@ -1649,6 +1762,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8919700125113120325, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
+      propertyPath: m_TagString
+      value: Humvee
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1730,6 +1847,10 @@ PrefabInstance:
     - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
       propertyPath: m_Name
       value: delh_foli_06_01 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1813,6 +1934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1894,6 +2019,10 @@ PrefabInstance:
     - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
       propertyPath: m_Name
       value: delh_foli_06_01 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1977,6 +2106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2059,6 +2192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2137,6 +2274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2202,6 +2343,10 @@ PrefabInstance:
     - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
       propertyPath: m_Name
       value: delh_foli_05 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2281,6 +2426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2302,6 +2451,10 @@ PrefabInstance:
     - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_Name
       value: delh_prop_04 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6895866164888710430, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_RootOrder
@@ -2368,6 +2521,10 @@ PrefabInstance:
     - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_Name
       value: delh_prop_04 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6895866164888710430, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_RootOrder
@@ -2491,6 +2648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2557,6 +2718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_05 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2578,6 +2743,10 @@ PrefabInstance:
     - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_Name
       value: delh_prop_04 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6895866164888710430, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_RootOrder
@@ -2909,9 +3078,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6921063942353175258, guid: 8218a9c7c2c42744389cf7ae5712a2c7, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8218a9c7c2c42744389cf7ae5712a2c7, type: 3}
       propertyPath: m_Name
       value: delh_prop_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8218a9c7c2c42744389cf7ae5712a2c7, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2996,6 +3173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3074,6 +3255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3095,6 +3280,10 @@ PrefabInstance:
     - target: {fileID: 1255222513979200545, guid: 2314c5eb25beebb48953f7fc38b831cc, type: 3}
       propertyPath: m_Name
       value: delh_prop_01_fountain (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255222513979200545, guid: 2314c5eb25beebb48953f7fc38b831cc, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6798488434943490644, guid: 2314c5eb25beebb48953f7fc38b831cc, type: 3}
       propertyPath: m_RootOrder
@@ -3173,6 +3362,10 @@ PrefabInstance:
     - target: {fileID: 5691353841312859840, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
       propertyPath: m_Name
       value: delh_foli_03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691353841312859840, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8064482115992081926, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
       propertyPath: m_RootOrder
@@ -3255,6 +3448,10 @@ PrefabInstance:
     - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_Name
       value: delh_prop_04 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6895866164888710430, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_RootOrder
@@ -3378,6 +3575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3399,6 +3600,10 @@ PrefabInstance:
     - target: {fileID: 4782071091596887344, guid: 160a964370e3e4d4f98c45b847f0f63d, type: 3}
       propertyPath: m_Name
       value: delh_prop_02_base (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782071091596887344, guid: 160a964370e3e4d4f98c45b847f0f63d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5190823039119530999, guid: 160a964370e3e4d4f98c45b847f0f63d, type: 3}
       propertyPath: m_RootOrder
@@ -3482,6 +3687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_03 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5691353841312859840, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8064482115992081926, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -3559,6 +3768,10 @@ PrefabInstance:
     - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_Name
       value: delh_prop_04 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6895866164888710430, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_RootOrder
@@ -3682,6 +3895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_01 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2993337943619335632, guid: bedeaa996413af045b27e3cf1e37d93b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3703,6 +3920,10 @@ PrefabInstance:
     - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_Name
       value: delh_prop_04 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604307552312802581, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6895866164888710430, guid: ea8ebf971e7a07244b270134c1c08cdb, type: 3}
       propertyPath: m_RootOrder
@@ -3830,6 +4051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3891,6 +4116,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2eb2e889a41f45d4c9eddc68d478a441, type: 3}
       propertyPath: m_Name
       value: delh_prop_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2eb2e889a41f45d4c9eddc68d478a441, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3974,6 +4203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_foli_06_01 (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 545385218724829737, guid: 3021a0eaefcdf4549b107f73a5c558ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3995,6 +4228,10 @@ PrefabInstance:
     - target: {fileID: 5691353841312859840, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
       propertyPath: m_Name
       value: delh_foli_03 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691353841312859840, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8064482115992081926, guid: f3135886ac182c349a35dc3e02b3392e, type: 3}
       propertyPath: m_RootOrder
@@ -4118,6 +4355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_prop_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b9ae02baeab3284f908208243e320cc, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4183,6 +4424,10 @@ PrefabInstance:
     - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
       propertyPath: m_Name
       value: delh_foli_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066311618541124792, guid: 58ca02311ab64bd4aaa5eb1d0939c146, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
