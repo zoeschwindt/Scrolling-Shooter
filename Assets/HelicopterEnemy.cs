@@ -17,24 +17,39 @@ public class HelicopterEnemy : MonoBehaviour
 
     private float nextFireTime;
 
+    void Start()
+    {
+        if (player == null)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                player = playerObject.transform;
+            }
+        }
+    }
+
     void Update()
     {
         if (player == null) return;
-        AvoidObstacles();
 
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance > stopDistance)
         {
-            // Movimiento directo hacia el jugador
-            Vector3 targetPosition = player.position;
+            // Dirección base hacia el jugador
+            Vector3 direction = (player.position - transform.position).normalized;
 
-            // Aplicar zigzag SOLO en el eje lateral (X si helicóptero está mirando adelante Z)
-            Vector3 zigzagOffset = transform.right * Mathf.Sin(Time.time * zigzagFrequency) * zigzagAmplitude;
-            targetPosition += zigzagOffset;
+            // Zigzag lateral (eje X local del helicóptero)
+            Vector3 zigzag = transform.right * Mathf.Sin(Time.time * zigzagFrequency) * zigzagAmplitude;
 
-            // Movimiento directo y suave
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            // Movimiento combinado
+            Vector3 movement = (direction * speed * Time.deltaTime) + (zigzag * Time.deltaTime);
+
+            // Aplicar movimiento y evitar obstáculos
+            transform.position += movement;
+
+            AvoidObstacles();
         }
         else
         {
@@ -45,9 +60,9 @@ public class HelicopterEnemy : MonoBehaviour
             }
         }
 
-        // Rotar para mirar al jugador (opcional)
+        // Rotar para mirar al jugador (solo en el eje Y)
         Vector3 lookDirection = player.position - transform.position;
-        lookDirection.y = 0; // No girar en eje Y
+        lookDirection.y = 0;
         if (lookDirection != Vector3.zero)
             transform.rotation = Quaternion.LookRotation(lookDirection);
     }
@@ -68,8 +83,8 @@ public class HelicopterEnemy : MonoBehaviour
         {
             if (hit.CompareTag("Obstacle") || hit.CompareTag("PlayerBullet"))
             {
-                // Sube rápido para esquivar
-                transform.position += Vector3.up * speed * 2 * Time.deltaTime;
+                // Elevarse para evitar el obstáculo
+                transform.position += Vector3.up * speed * Time.deltaTime;
                 break;
             }
         }
