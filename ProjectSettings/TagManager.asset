@@ -10,6 +10,7 @@ TagManager:
   - ProyectilSuave
   - AvionEnemigo
   - Enemy
+  - Humvee
   layers:
   - Default
   - TransparentFX
