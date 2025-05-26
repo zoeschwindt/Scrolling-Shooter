@@ -12,7 +12,6 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Primero intenta dañar enemigos normales
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
         {
@@ -21,7 +20,6 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        // Luego intenta dañar al boss
         BossHealth bossHealth = other.GetComponent<BossHealth>();
         if (bossHealth != null)
         {
@@ -30,7 +28,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        Destroy(gameObject); // Si no era ni enemigo ni boss
+        Destroy(gameObject);
     }
 
 

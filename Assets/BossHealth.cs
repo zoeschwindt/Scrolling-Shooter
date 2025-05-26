@@ -2,22 +2,20 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public float maxHealth = 1000f;
-    private float currentHealth;
+    public float maxHealth = 100f;
+    public float currentHealth;
 
-    public GameObject victoryPanel; // Asignalo desde el Inspector
+    public GameObject victoryPanel;  // Asigná este panel desde el inspector
 
     void Start()
     {
         currentHealth = maxHealth;
-
-        if (victoryPanel != null)
-            victoryPanel.SetActive(false);
     }
 
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         if (currentHealth <= 0)
         {
@@ -27,12 +25,11 @@ public class BossHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("¡El Boss ha sido derrotado!");
         if (victoryPanel != null)
         {
             victoryPanel.SetActive(true); // Mostrar panel de victoria
         }
 
-        Destroy(gameObject); // Destruye el boss si querés
+        Destroy(gameObject); // Si querés que desaparezca el boss al morir
     }
 }
