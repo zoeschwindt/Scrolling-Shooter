@@ -5853,7 +5853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4024487240733854617, guid: 355989c9430cdf8498a16a59073322fa, type: 3}
       propertyPath: m_Name
-      value: delh_arch_01
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 4086686787452265526, guid: 355989c9430cdf8498a16a59073322fa, type: 3}
       propertyPath: m_IsTrigger
