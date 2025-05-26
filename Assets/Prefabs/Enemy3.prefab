@@ -959,8 +959,8 @@ GameObject:
   - component: {fileID: 3437315290464660497}
   - component: {fileID: -9084417218026416137}
   m_Layer: 0
-  m_Name: biplane
-  m_TagString: Untagged
+  m_Name: Enemy3
+  m_TagString: AvionEnemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -974,7 +974,7 @@ Transform:
   m_GameObject: {fileID: 4239236640370554470}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -74.1, y: 26.4, z: -108.6}
+  m_LocalPosition: {x: -81.6, y: 47.8, z: -72.6}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1066,9 +1066,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 15
+  speed: 20
   explosionPrefab: {fileID: 0}
-  selfDestructDistance: 1.5
+  selfDestructDistance: 0
+  damageAmount: 100
+  maxHealth: 40
 --- !u!1 &4311574173317624735
 GameObject:
   m_ObjectHideFlags: 0
