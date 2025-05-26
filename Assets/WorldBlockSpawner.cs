@@ -26,21 +26,11 @@ public class WorldBlockSpawner : MonoBehaviour
 
     void Start()
     {
-       
-        if (blocks.Length == 0)
-        {
-            Debug.LogError("No hay bloques asignados en el array 'blocks'.");
-            return;
-        }
-
-       
+        // Instanciar el bloque 0 una sola vez al inicio
         GameObject firstBlock = Instantiate(blocks[0], transform.position, Quaternion.identity);
         lastBlock = firstBlock.transform;
 
-       
-        SpawnEnemies(firstBlock);
-
-       
+        // Generar los siguientes bloques sin incluir el bloque 0
         for (int i = 0; i < initialBlockCount; i++)
         {
             SpawnBlock();

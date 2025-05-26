@@ -36,7 +36,20 @@ public class EnemyHealth : MonoBehaviour
     {
         if (prefabAlMorir != null)
         {
-            Instantiate(prefabAlMorir, transform.position, Quaternion.identity);
+            GameObject objetoMuerte = Instantiate(prefabAlMorir, transform.position, Quaternion.identity);
+
+            // Buscar bloque padre con script MoveBlock
+            Transform bloquePadre = transform.parent;
+
+            while (bloquePadre != null && bloquePadre.GetComponent<MoveBlock>() == null)
+            {
+                bloquePadre = bloquePadre.parent;
+            }
+
+            if (bloquePadre != null)
+            {
+                objetoMuerte.transform.SetParent(bloquePadre);
+            }
         }
 
         // Sumamos punto cuando muere el enemigo
