@@ -10,7 +10,9 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text bombScoreText;   // Texto para puntaje bombas
 
     public static ScoreManager instance;
-
+    public GameObject boss; // Asignalo en el Inspector
+    public float bossTargetZ = 10f; // Posición Z hacia la que se moverá el boss
+    private bool bossMoved = false;
     void Awake()
     {
         if (instance == null)
@@ -30,7 +32,36 @@ public class ScoreManager : MonoBehaviour
     {
         enemyScore++;
         UpdateEnemyScoreUI();
+
+        if (!bossMoved && enemyScore >= 15)
+        {
+            bossMoved = true;
+
+            // Mover el boss
+            if (boss != null)
+            {
+                MoveBoss mover = boss.GetComponent<MoveBoss>();
+                if (mover != null)
+                {
+                    mover.StartMoving(bossTargetZ);
+                }
+            }
+
+            // Detener el spawner
+            if (WorldBlockSpawner.Instance != null)
+            {
+                WorldBlockSpawner.Instance.StopSpawning();
+            }
+
+            //// Detener el movimiento de todos los bloques
+            //MoveBlock[] bloques = FindObjectsOfType<MoveBlock>();
+            //foreach (MoveBlock bloque in bloques)
+            //{
+            //    bloque.enabled = false;
+            //}
+        }
     }
+
 
     // Suma punto de bomba
     public void AddBombPoint()

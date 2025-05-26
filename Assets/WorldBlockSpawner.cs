@@ -11,6 +11,7 @@ public class WorldBlockSpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;
 
     private Transform lastBlock;
+    private bool isSpawningActive = true; // ?? NUEVO: Controla si sigue generando bloques
 
     private void Awake()
     {
@@ -39,20 +40,20 @@ public class WorldBlockSpawner : MonoBehaviour
 
     public void SpawnBlock()
     {
+        if (!isSpawningActive) return; // ?? NO spawnea si fue desactivado
+
         if (blocks.Length <= 1)
         {
             Debug.LogWarning("Solo hay un bloque (el inicial). Agregá más prefabs al array 'blocks' en el Inspector.");
             return;
         }
 
-        
         int prefabIndex = Random.Range(1, blocks.Length);
         Vector3 spawnPosition = lastBlock.position + Vector3.forward * blockLength;
 
         GameObject newBlock = Instantiate(blocks[prefabIndex], spawnPosition, Quaternion.identity);
         lastBlock = newBlock.transform;
 
-  
         SpawnEnemies(newBlock);
     }
 
@@ -69,5 +70,12 @@ public class WorldBlockSpawner : MonoBehaviour
                 enemigo.transform.SetParent(block.transform);
             }
         }
+    }
+
+
+    public void StopSpawning()
+    {
+        isSpawningActive = false;
+        Debug.Log("Spawner detenido por ScoreManager.");
     }
 }
