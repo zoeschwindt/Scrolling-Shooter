@@ -3,21 +3,17 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
-    public float currentHealth;
-
-    public GameObject victoryPanel;  // Asigná este panel desde el inspector
+    private float currentHealth;
 
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float damage)
     {
-        currentHealth -= amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        if (currentHealth <= 0)
+        currentHealth -= damage;
+        if (currentHealth <= 0f)
         {
             Die();
         }
@@ -25,11 +21,7 @@ public class BossHealth : MonoBehaviour
 
     void Die()
     {
-        if (victoryPanel != null)
-        {
-            victoryPanel.SetActive(true); // Mostrar panel de victoria
-        }
-
-        Destroy(gameObject); // Si querés que desaparezca el boss al morir
+        Debug.Log("El jefe ha muerto");
+        Destroy(gameObject); // O lo que quieras que haga el jefe
     }
 }
