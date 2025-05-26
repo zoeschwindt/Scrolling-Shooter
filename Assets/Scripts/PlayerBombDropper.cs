@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro; // solo si querés mostrar cuántas bombas tenés
+using TMPro; 
 
 public class PlayerBombDropper : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class PlayerBombDropper : MonoBehaviour
 
     private InputAction dropBombAction;
 
-    // UI opcional
+    
     public TMP_Text bombCountText;
 
     private void OnEnable()

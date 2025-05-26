@@ -3,13 +3,13 @@ using UnityEngine;
 public class HelicopterEnemy : MonoBehaviour
 {
     public Transform player;
-    public float stopDistance = 22f;        // Distancia mínima para detenerse
-    public float shootingDistance = 30f;    // Distancia a la que empieza a disparar
+    public float stopDistance = 22f;       
+    public float shootingDistance = 30f;  
     public float speed = 5f;
 
     public GameObject bulletPrefab;
     public Transform[] firePoints;
-    public float fireRate = 10f; // 10 balas por segundo
+    public float fireRate = 10f; 
 
     public float zigzagFrequency = 2f;
     public float zigzagAmplitude = 1f;
@@ -38,12 +38,12 @@ public class HelicopterEnemy : MonoBehaviour
 
         if (distance > shootingDistance)
         {
-            // Muy lejos, solo acercarse (sin disparar)
+            
             MoveTowardsPlayer();
         }
         else if (distance > stopDistance && distance <= shootingDistance)
         {
-            // Entre 22 y 30, se acerca y dispara
+            
             MoveTowardsPlayer();
 
             if (Time.time >= nextFireTime)
@@ -54,7 +54,7 @@ public class HelicopterEnemy : MonoBehaviour
         }
         else
         {
-            // Dentro de 22 metros, se detiene y dispara
+            
             if (Time.time >= nextFireTime)
             {
                 Shoot();

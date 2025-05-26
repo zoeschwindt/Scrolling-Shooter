@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,6 +8,14 @@ public class PlayerHealth : MonoBehaviour
 
     public Image healthBarImage;
     public GameObject panelDerrota;
+
+    [Header("Sonido de daño")]
+    public AudioSource audioSource;
+    public AudioClip hurtSound;
+
+    [Header("Sonido de Game Over")]
+    public AudioSource gameOverAudioSource;
+    public AudioClip gameOverClip;
 
     void Start()
     {
@@ -22,6 +29,11 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthBar();
+
+        if (hurtSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(hurtSound);
+        }
 
         if (currentHealth <= 0)
         {
@@ -37,14 +49,17 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        Time.timeScale = 0f; // Pausa el juego
         panelDerrota.SetActive(true);
-    }
+        Time.timeScale = 0f;
 
-    // Botón opcional para reiniciar
-    public void Reintentar()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+       
+        if (gameOverClip != null && gameOverAudioSource != null)
+        {
+            gameOverAudioSource.PlayOneShot(gameOverClip);
+        }
     }
 }
+

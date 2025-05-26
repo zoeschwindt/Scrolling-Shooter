@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public float fallSpeed = 1f;
+    public AudioSource bombAudio; 
 
     void Update()
     {
@@ -11,15 +12,23 @@ public class Bomb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (bombAudio != null)
+            bombAudio.Play(); 
+
         if (other.CompareTag("Humvee"))
         {
-            Destroy(other.gameObject); // Destruye el Humvee
-            Destroy(gameObject); // Destruye la bomba también, si querés
+            Destroy(other.gameObject); 
+            Destroy(gameObject); 
+
+           
+            if (ScoreManager.instance != null)
+            {
+                ScoreManager.instance.AddEnemyPoint();
+            }
         }
         else if (other.CompareTag("Enemy"))
         {
-            Destroy(gameObject);        // Solo destruye la bomba
+            Destroy(gameObject); 
         }
-
     }
 }

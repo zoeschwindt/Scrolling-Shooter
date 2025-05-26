@@ -6,13 +6,18 @@ public class ScoreManager : MonoBehaviour
     public int enemyScore = 0;
     public int bombScore = 0;
 
-    public TMP_Text enemyScoreText;  // Texto para puntaje enemigos
-    public TMP_Text bombScoreText;   // Texto para puntaje bombas
+    public TMP_Text enemyScoreText;  
+    public TMP_Text bombScoreText;   
 
     public static ScoreManager instance;
-    public GameObject boss; // Asignalo en el Inspector
-    public float bossTargetZ = 10f; // Posición Z hacia la que se moverá el boss
+    public GameObject boss; 
+    public float bossTargetZ = 10f; 
     private bool bossMoved = false;
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     void Awake()
     {
         if (instance == null)
@@ -27,7 +32,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    // Suma punto de enemigo
+    
     public void AddEnemyPoint()
     {
         enemyScore++;
@@ -37,7 +42,7 @@ public class ScoreManager : MonoBehaviour
         {
             bossMoved = true;
 
-            // Mover el boss
+            
             if (boss != null)
             {
                 MoveBoss mover = boss.GetComponent<MoveBoss>();
@@ -47,23 +52,18 @@ public class ScoreManager : MonoBehaviour
                 }
             }
 
-            // Detener el spawner
+           
             if (WorldBlockSpawner.Instance != null)
             {
                 WorldBlockSpawner.Instance.StopSpawning();
             }
 
-            //// Detener el movimiento de todos los bloques
-            //MoveBlock[] bloques = FindObjectsOfType<MoveBlock>();
-            //foreach (MoveBlock bloque in bloques)
-            //{
-            //    bloque.enabled = false;
-            //}
+            
         }
     }
 
 
-    // Suma punto de bomba
+   
     public void AddBombPoint()
     {
         bombScore++;

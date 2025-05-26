@@ -12,16 +12,16 @@ public class BalaEnemiga : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Usamos velocity (no linearVelocity)
+       
         rb.linearVelocity = transform.forward * speed;
 
-        // La bala se destruye después de un tiempo
+        
         Destroy(gameObject, lifeTime);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // Si choca con el jugador
+  
         if (other.CompareTag("Player"))
         {
             PlayerHealth player = other.GetComponent<PlayerHealth>();
@@ -31,7 +31,7 @@ public class BalaEnemiga : MonoBehaviour
             }
         }
 
-        // Destruimos la bala en cualquier caso
+        
         Destroy(gameObject);
     }
 }

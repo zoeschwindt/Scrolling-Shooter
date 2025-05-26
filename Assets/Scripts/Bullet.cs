@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float lifeTime = 3f;
-    public float damage = 25f;  
+    public float damage = 25f;
 
     void Start()
     {
@@ -16,14 +16,6 @@ public class Bullet : MonoBehaviour
         if (enemyHealth != null)
         {
             enemyHealth.TakeDamage(damage);
-            Destroy(gameObject);
-            return;
-        }
-
-        BossHealth bossHealth = other.GetComponent<BossHealth>();
-        if (bossHealth != null)
-        {
-            bossHealth.TakeDamage(damage);
             Destroy(gameObject);
             return;
         }

@@ -8,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
     public Transform gunRight;
     public float fireRate = 0.1f; 
     public float bulletSpeed = 50f;
-
+    public AudioSource gunAudio;
     private bool isShooting = false;
     private float shootTimer;
 
@@ -29,9 +29,20 @@ public class PlayerShooting : MonoBehaviour
     public void OnFire(InputAction.CallbackContext context)
     {
         if (context.started)
+        {
             isShooting = true;
+            shootTimer = 0f;
+
+            if (gunAudio != null && !gunAudio.isPlaying)
+                gunAudio.Play();
+        }
         else if (context.canceled)
+        {
             isShooting = false;
+
+            if (gunAudio != null && gunAudio.isPlaying)
+                gunAudio.Stop();
+        }
     }
 
     [System.Obsolete]

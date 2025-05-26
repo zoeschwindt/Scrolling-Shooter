@@ -12,7 +12,7 @@ public class EnemyShotgun : MonoBehaviour
 
     void Start()
     {
-        // Buscar al jugador automáticamente por tag
+        
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -26,7 +26,7 @@ public class EnemyShotgun : MonoBehaviour
 
     void Update()
     {
-        // Si no hay objetivo, intentamos buscarlo otra vez (por si se creó más tarde)
+       
         if (helicopterTarget == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -34,7 +34,7 @@ public class EnemyShotgun : MonoBehaviour
             {
                 helicopterTarget = player.transform;
             }
-            return; // esperamos al próximo frame
+            return; 
         }
 
         float distance = Vector3.Distance(transform.position, helicopterTarget.position);
