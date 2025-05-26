@@ -14,6 +14,20 @@ public class KamikazePlane : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
+        // Buscar automáticamente al jugador por su tag
+        if (player == null)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                player = playerObject.transform;
+            }
+            else
+            {
+                Debug.LogWarning("KamikazePlane: No se encontró al jugador con el tag 'Player'.");
+            }
+        }
     }
 
     void Update()

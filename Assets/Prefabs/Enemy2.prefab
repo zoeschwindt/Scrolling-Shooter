@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b0d1a27bfba43408b5a493dc5fd3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helicopterTarget: {fileID: 0}
-  detectionRange: 20
+  detectionRange: 50
   fireRate: 1
   bulletPrefab: {fileID: 728230889742716418, guid: 435247583e91f314791d15b967a88ee4, type: 3}
   firePoint: {fileID: 5886651999118855316}
