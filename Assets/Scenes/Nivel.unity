@@ -35981,8 +35981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360aef64253d2f74cbd4edffe80c64f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  scoreText: {fileID: 1702443597}
+  enemyScore: 0
+  bombScore: 0
+  enemyScoreText: {fileID: 1702443597}
+  bombScoreText: {fileID: 292256369}
 --- !u!4 &859575967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6914194639181709215, guid: 7c7bd35387195cc469e4a64cf00f99a5, type: 3}
@@ -51803,6 +51805,10 @@ PrefabInstance:
     - target: {fileID: 4421525259197088864, guid: cac1cc881ddea1e4eb6cfad7d0626472, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105459961026075386, guid: cac1cc881ddea1e4eb6cfad7d0626472, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -87431,7 +87437,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095436363}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

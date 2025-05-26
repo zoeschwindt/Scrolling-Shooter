@@ -3,8 +3,11 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int score = 0;
-    public TMP_Text scoreText; // Arrastrás el TMP Text desde la escena
+    public int enemyScore = 0;
+    public int bombScore = 0;
+
+    public TMP_Text enemyScoreText;  // Texto para puntaje enemigos
+    public TMP_Text bombScoreText;   // Texto para puntaje bombas
 
     public static ScoreManager instance;
 
@@ -13,6 +16,8 @@ public class ScoreManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            UpdateEnemyScoreUI();
+            UpdateBombScoreUI();
         }
         else
         {
@@ -20,14 +25,29 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void AddPoint()
+    // Suma punto de enemigo
+    public void AddEnemyPoint()
     {
-        score++;
-        UpdateUI();
+        enemyScore++;
+        UpdateEnemyScoreUI();
     }
 
-    void UpdateUI()
+    // Suma punto de bomba
+    public void AddBombPoint()
     {
-        scoreText.text = score.ToString();
+        bombScore++;
+        UpdateBombScoreUI();
+    }
+
+    void UpdateEnemyScoreUI()
+    {
+        if (enemyScoreText != null)
+            enemyScoreText.text = enemyScore.ToString();
+    }
+
+    void UpdateBombScoreUI()
+    {
+        if (bombScoreText != null)
+            bombScoreText.text = bombScore.ToString();
     }
 }

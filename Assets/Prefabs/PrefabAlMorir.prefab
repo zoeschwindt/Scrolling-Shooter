@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5069728746298511314}
   - component: {fileID: 5069728746287030994}
   - component: {fileID: 5709126944588885955}
+  - component: {fileID: 1823341161868994216}
   m_Layer: 0
   m_Name: PrefabAlMorir
   m_TagString: Untagged
@@ -131,3 +132,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.025281802, y: 0.075537264, z: 0.025281802}
   m_Center: {x: -0.000000053551048, y: 0, z: -0.000000011641532}
+--- !u!114 &1823341161868994216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069728746296512786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351fe22813333be4ead9291f47e3d7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

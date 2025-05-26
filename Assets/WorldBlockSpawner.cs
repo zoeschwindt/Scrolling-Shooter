@@ -65,7 +65,8 @@ public class WorldBlockSpawner : MonoBehaviour
                 if (enemyPrefabs.Length == 0) return;
 
                 int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-                Instantiate(enemyPrefabs[enemyIndex], child.position, child.rotation);
+                GameObject enemigo = Instantiate(enemyPrefabs[enemyIndex], child.position, child.rotation);
+                enemigo.transform.SetParent(block.transform);
             }
         }
     }

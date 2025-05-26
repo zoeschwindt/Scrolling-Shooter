@@ -64,7 +64,7 @@ public class KamikazePlane : MonoBehaviour
 
         if (ScoreManager.instance != null)
         {
-            ScoreManager.instance.AddPoint();
+            ScoreManager.instance.AddEnemyPoint();
         }
 
         Destroy(gameObject);

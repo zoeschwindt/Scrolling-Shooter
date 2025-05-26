@@ -55,9 +55,8 @@ public class EnemyHealth : MonoBehaviour
         // Sumamos punto cuando muere el enemigo
         if (ScoreManager.instance != null)
         {
-            ScoreManager.instance.AddPoint();
+            ScoreManager.instance.AddEnemyPoint();
         }
-
         Destroy(gameObject);
     }
 }
