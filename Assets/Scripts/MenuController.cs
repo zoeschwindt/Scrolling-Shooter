@@ -3,16 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
- 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-      
-       
         SceneManager.LoadScene(0);
     }
 
-    
     public void RestartLevel()
     {
         Time.timeScale = 1f;
@@ -21,9 +17,15 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    
+    public void GoToLevel2()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Nivel2"); 
     }
 }

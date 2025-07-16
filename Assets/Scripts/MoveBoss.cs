@@ -19,7 +19,7 @@ public class MoveBoss : MonoBehaviour
     public GameObject victoryPanel;
 
     [Header("Audio")]
-    public AudioSource victoryMusic;  
+    public AudioSource victoryMusic;
 
     public void StartMoving(float targetZPosition)
     {
@@ -58,7 +58,7 @@ public class MoveBoss : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-          
+
             AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
             foreach (AudioSource audioSrc in allAudioSources)
             {
@@ -66,7 +66,7 @@ public class MoveBoss : MonoBehaviour
                     audioSrc.Stop();
             }
 
-            
+
             if (victoryMusic != null)
                 victoryMusic.Play();
         }
