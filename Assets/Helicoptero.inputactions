@@ -1,15 +1,15 @@
 {
-    "name": "Player",
+    "name": "Helicoptero",
     "maps": [
         {
             "name": "Player",
-            "id": "709777f4-df53-4e13-a07b-4972d0ae4674",
+            "id": "e36d3312-052c-4ae0-86e3-d723035142c8",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "ebc3e4d5-178c-4bd1-b7fa-0cafd0f8ad39",
-                    "expectedControlType": "",
+                    "id": "99cf95c2-9653-4c96-ae3e-657668704fbe",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -17,7 +17,7 @@
                 {
                     "name": "Fire",
                     "type": "Button",
-                    "id": "8eb52165-ded9-4e37-b405-37862a25dd76",
+                    "id": "1a2f4ce9-b297-4830-ba1d-a9590fa3ce25",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -26,7 +26,7 @@
                 {
                     "name": "DropBomb",
                     "type": "Button",
-                    "id": "041a6ad5-39eb-4928-b4ac-815db903b52e",
+                    "id": "1498cd9b-d620-4c0d-b3d9-1809b6e6c251",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -36,7 +36,7 @@
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "218dc838-6ec6-4f96-b7e8-7208c74e1a33",
+                    "id": "d725c305-79ae-4195-8df2-c55637a483ce",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -47,7 +47,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "e4f3739a-fcfd-4098-9ccf-e9ba9bec8e85",
+                    "id": "05952fcc-352d-4a85-82b1-e1056fbdb7d7",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -58,7 +58,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "a8b5f027-960b-4783-91da-07d1cc1756b6",
+                    "id": "a126eadc-4b4c-47a0-83a6-57a7319a18f1",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -69,7 +69,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "29e534da-daa9-4a3c-9399-dc5118881f9b",
+                    "id": "8d0ece93-cafa-4910-8e2f-633ae2619e61",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -80,7 +80,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "db49cb04-11aa-4483-b2c7-c919f4d0a47c",
+                    "id": "3528be3f-005c-4c34-a7e2-db0d8ef568ca",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -91,9 +91,9 @@
                 },
                 {
                     "name": "",
-                    "id": "5819ae5c-f17a-4d26-b306-03343287297d",
+                    "id": "e396605b-c010-4b46-befb-85699a41f576",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "Press",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "",
                     "action": "Fire",
@@ -102,7 +102,7 @@
                 },
                 {
                     "name": "",
-                    "id": "a29e4df6-684b-4950-8e80-2ee2023924ca",
+                    "id": "f26fcd5f-5a8c-4d5f-a855-ef7b9fafe648",
                     "path": "<Mouse>/rightButton",
                     "interactions": "Press",
                     "processors": "",

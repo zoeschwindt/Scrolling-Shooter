@@ -28,7 +28,7 @@ public class PlayerBombDropper : MonoBehaviour
             dropBombAction.performed -= OnDropBomb;
     }
 
-    private void OnDropBomb(InputAction.CallbackContext context)
+    public void OnDropBomb(InputAction.CallbackContext context)
     {
         if (bombsAvailable <= 0) return;
 
