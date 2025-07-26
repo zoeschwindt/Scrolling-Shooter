@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class FPSCameraController : MonoBehaviour
+public class DoomStylePlayerController : MonoBehaviour
 {
     public float mouseSensitivity = 2f;
 
@@ -14,7 +15,7 @@ public class FPSCameraController : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
 
-        // Girar horizontalmente todo el objeto (jugador, cámara, arma)
+        // Rota todo el jugador (y por ende también cámara y arma)
         transform.Rotate(Vector3.up * mouseX);
     }
 }

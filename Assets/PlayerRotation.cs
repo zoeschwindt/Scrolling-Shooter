@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class FPSCameraController : MonoBehaviour
+public class PlayerRotation : MonoBehaviour
 {
     public float mouseSensitivity = 2f;
+
+    float currentYRotation = 0f;
 
     void Start()
     {
@@ -13,8 +15,8 @@ public class FPSCameraController : MonoBehaviour
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        currentYRotation += mouseX;
 
-        // Girar horizontalmente todo el objeto (jugador, cámara, arma)
-        transform.Rotate(Vector3.up * mouseX);
+        transform.rotation = Quaternion.Euler(0f, currentYRotation, 0f);
     }
 }

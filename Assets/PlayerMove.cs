@@ -1,58 +1,110 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private Transform cameraTransform;
+    [Header("Movimiento")]
+    public float moveSpeed = 5f;
+
+    [Header("Cámara")]
+    public Transform cameraTransform;
+    public float mouseSensitivity = 2f;
+    public float verticalClamp = 85f;
+
+    [Header("Salto")]
+    public float jumpForce = 7f;
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.3f;
+    public LayerMask groundMask;
+
+    [Header("Arma")]
+    public Weapondos weapon; // ← Asigná tu objeto con el script del arma
+
+    private Rigidbody rb;
     private PlayerInput playerInput;
     private InputAction moveAction;
-    private Rigidbody rb;
+    private InputAction lookAction;
+    private InputAction jumpAction;
+    private InputAction shootAction;
 
-    void Start()
+    private float xRotation = 0f;
+    private bool isGrounded;
+    internal bool wallrunning;
+
+    private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
-        moveAction = playerInput.actions.FindAction("Move");
         rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+
+        playerInput = GetComponent<PlayerInput>();
+
+        moveAction = playerInput.actions["Move"];
+        lookAction = playerInput.actions["Look"];
+        jumpAction = playerInput.actions["Jump"];
+        shootAction = playerInput.actions["Shoot"]; // ← Acción "Shoot" del Input System
+
+        shootAction.performed += OnShoot;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    void FixedUpdate()
+    private void OnDisable()
     {
-        MoveRelativeToCamera();
-        RotateWithCamera();
+        if (shootAction != null)
+            shootAction.performed -= OnShoot;
     }
 
-    void MoveRelativeToCamera()
+    private void OnShoot(InputAction.CallbackContext context)
+    {
+        if (weapon != null)
+            weapon.Fire();
+    }
+
+    private void Update()
+    {
+        RotateCamera();
+        CheckGrounded();
+
+        if (jumpAction != null && jumpAction.triggered && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
+    private void RotateCamera()
+    {
+        Vector2 lookInput = lookAction.ReadValue<Vector2>();
+
+        float mouseX = lookInput.x * mouseSensitivity;
+        float mouseY = lookInput.y * mouseSensitivity;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -verticalClamp, verticalClamp);
+
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.Rotate(Vector3.up * mouseX);
+    }
+
+    private void MovePlayer()
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
-        Vector3 inputDir = new Vector3(input.x, 0f, input.y);
+        Vector3 moveDirection = transform.forward * input.y + transform.right * input.x;
 
-        // Direcci�n relativa a la c�mara
-        Vector3 camForward = cameraTransform.forward;
-        Vector3 camRight = cameraTransform.right;
+        Vector3 velocity = moveDirection.normalized * moveSpeed;
+        velocity.y = rb.linearVelocity.y;
 
-        camForward.y = 0f;
-        camRight.y = 0f;
-        camForward.Normalize();
-        camRight.Normalize();
-
-        Vector3 moveDirection = camForward * inputDir.z + camRight * inputDir.x;
-
-        if (moveDirection.sqrMagnitude > 0.01f)
-        {
-            rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
-        }
+        rb.linearVelocity = velocity;
     }
 
-    void RotateWithCamera()
+    private void CheckGrounded()
     {
-        Vector3 camForward = cameraTransform.forward;
-        camForward.y = 0f;
-
-        if (camForward.sqrMagnitude > 0.01f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(camForward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.fixedDeltaTime);
-        }
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
     }
 }
