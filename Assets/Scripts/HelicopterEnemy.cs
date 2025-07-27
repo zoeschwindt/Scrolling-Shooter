@@ -104,4 +104,26 @@ public class HelicopterEnemy : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DeathWall") || other.CompareTag("Enemy"))
+        {
+            EnemyHealth health = GetComponent<EnemyHealth>();
+            if (health != null)
+            {
+                health.TakeDamage(health.maxHealth);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+
+
+
+
+
 }

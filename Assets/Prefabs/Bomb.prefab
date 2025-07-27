@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4432639586810001821}
   - component: {fileID: -7080927276537986220}
   m_Layer: 0
-  m_Name: Battery_medium 1 1
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSpeed: 6
-  bombAudio: {fileID: 0}
+  bombAudio: {fileID: -7080927276537986220}
 --- !u!82 &-7080927276537986220
 AudioSource:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 53860b5870c9a5442b40c8493a271577, type: 3}
   m_Resource: {fileID: 8300000, guid: 53860b5870c9a5442b40c8493a271577, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.124
   m_Pitch: 1
   Loop: 0

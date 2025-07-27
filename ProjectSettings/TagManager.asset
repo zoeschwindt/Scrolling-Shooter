@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Humvee
   - Bomba
+  - DeathWall
   layers:
   - Default
   - TransparentFX

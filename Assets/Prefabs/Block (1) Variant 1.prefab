@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delh_terr_01_02 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 3049253326932180850, guid: 4586799bd9e6a4644ab7ce6348b4a8b3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6652462008717105541, guid: 4586799bd9e6a4644ab7ce6348b4a8b3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.67927647
@@ -97,13 +101,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7315798274794588127, guid: 4586799bd9e6a4644ab7ce6348b4a8b3, type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315798274794588127, guid: 4586799bd9e6a4644ab7ce6348b4a8b3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3049253326932180850, guid: 4586799bd9e6a4644ab7ce6348b4a8b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2685505795592896507}
   m_SourcePrefab: {fileID: 100100000, guid: 4586799bd9e6a4644ab7ce6348b4a8b3, type: 3}
+--- !u!1 &742637281441031225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3049253326932180850, guid: 4586799bd9e6a4644ab7ce6348b4a8b3, type: 3}
+  m_PrefabInstance: {fileID: 2314708452950760267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2685505795592896507
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742637281441031225}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &8956874477210436302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6652462008717105541, guid: 4586799bd9e6a4644ab7ce6348b4a8b3, type: 3}

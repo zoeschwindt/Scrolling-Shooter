@@ -17,6 +17,10 @@ public class PlayerBombDropper : MonoBehaviour
     {
         var playerInput = GetComponent<PlayerInput>();
         dropBombAction = playerInput.actions["DropBomb"];
+
+        Debug.Log($"OnEnable ejecutado por: {gameObject.name}");
+
+        dropBombAction.performed -= OnDropBomb;  
         dropBombAction.performed += OnDropBomb;
 
         UpdateBombUI();
@@ -28,14 +32,18 @@ public class PlayerBombDropper : MonoBehaviour
             dropBombAction.performed -= OnDropBomb;
     }
 
+
     public void OnDropBomb(InputAction.CallbackContext context)
     {
+        Debug.Log("DropBomb ejecutado en: " + Time.time);
+
         if (bombsAvailable <= 0) return;
 
         Instantiate(bombPrefab, bombDropPoint.position, bombDropPoint.rotation);
         bombsAvailable--;
         UpdateBombUI();
     }
+
 
     public void AddBomb()
     {
