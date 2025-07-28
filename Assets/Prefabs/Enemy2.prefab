@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6991409241467709750}
   m_Layer: 0
   m_Name: 1_Tower_LOD0_00_low.001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b0d1a27bfba43408b5a493dc5fd3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 50
+  detectionRange: 200
   fireRate: 1
   bulletPrefab: {fileID: 728230889742716418, guid: 435247583e91f314791d15b967a88ee4, type: 3}
   firePoint: {fileID: 5886651999118855316}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 2456064016194250353}
   m_Layer: 0
   m_Name: 0_AC1_LOD0_00_low.003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 9177394872404922557}
   m_Layer: 0
   m_Name: 4_Wheels_Lods.003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 2351235745382123058}
   m_Layer: 0
   m_Name: Main_LOD0_00_low.001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 4854695885284698940}
   m_Layer: 0
   m_Name: 1_Towers_Lods.002
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 2041743864321963236}
   m_Layer: 0
   m_Name: Wheels_LOD1_00_low.003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 5653833580412377230}
   m_Layer: 0
   m_Name: Wheels_LOD0_00_low.001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 3124209433326509253}
   m_Layer: 0
   m_Name: 11_Center_Pos.001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 2645402302735242692}
   m_Layer: 0
   m_Name: 1_Tower_LOD1_00_low.003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 4380875526212557301}
   m_Layer: 0
   m_Name: 2_Mains_Lods.003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 3316429195925264532}
   m_Layer: 0
   m_Name: Main_LOD1_00_low.003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 8368860424080943884}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -729,5 +729,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7607372, y: 2.4579377, z: 4.947258}
-  m_Center: {x: -0.010279338, y: 1.2345569, z: -0.3105329}
+  m_Size: {x: 2.5781581, y: 2.4579377, z: 5.1957755}
+  m_Center: {x: -0.010306041, y: 1.2345569, z: -0.16368103}

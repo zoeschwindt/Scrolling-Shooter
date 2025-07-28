@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro; 
+using TMPro;
 
 public class PlayerBombDropper : MonoBehaviour
 {
@@ -9,8 +9,8 @@ public class PlayerBombDropper : MonoBehaviour
     public int bombsAvailable = 0;
 
     private InputAction dropBombAction;
+    private bool bombPressed = false;
 
-    
     public TMP_Text bombCountText;
 
     private void OnEnable()
@@ -18,10 +18,11 @@ public class PlayerBombDropper : MonoBehaviour
         var playerInput = GetComponent<PlayerInput>();
         dropBombAction = playerInput.actions["DropBomb"];
 
-        Debug.Log($"OnEnable ejecutado por: {gameObject.name}");
+        dropBombAction.started -= OnDropBomb;
+        dropBombAction.started += OnDropBomb;
 
-        dropBombAction.performed -= OnDropBomb;  
-        dropBombAction.performed += OnDropBomb;
+        dropBombAction.canceled -= OnDropBombRelease;
+        dropBombAction.canceled += OnDropBombRelease;
 
         UpdateBombUI();
     }
@@ -29,21 +30,29 @@ public class PlayerBombDropper : MonoBehaviour
     private void OnDisable()
     {
         if (dropBombAction != null)
-            dropBombAction.performed -= OnDropBomb;
+        {
+            dropBombAction.started -= OnDropBomb;
+            dropBombAction.canceled -= OnDropBombRelease;
+        }
     }
 
-
-    public void OnDropBomb(InputAction.CallbackContext context)
+    private void OnDropBomb(InputAction.CallbackContext context)
     {
-        Debug.Log("DropBomb ejecutado en: " + Time.time);
-
+        if (bombPressed) return; // evita múltiples lanzamientos por el mismo clic
         if (bombsAvailable <= 0) return;
 
         Instantiate(bombPrefab, bombDropPoint.position, bombDropPoint.rotation);
         bombsAvailable--;
+        bombPressed = true;
+
         UpdateBombUI();
     }
 
+    private void OnDropBombRelease(InputAction.CallbackContext context)
+    {
+        // Se libera la bandera cuando se suelta el botón
+        bombPressed = false;
+    }
 
     public void AddBomb()
     {

@@ -37,7 +37,8 @@ public class KamikazePlane : MonoBehaviour
         Vector3 direction = (player.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
 
-        transform.rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(0, -90, 0);
+        transform.rotation = Quaternion.LookRotation(direction);
+
 
         if (Vector3.Distance(transform.position, player.position) < selfDestructDistance)
         {
@@ -102,6 +103,10 @@ public class KamikazePlane : MonoBehaviour
         {
             TakeDamage(10f);
             Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("DeathWall"))
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, GameObject source)
     {
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            Die(source);
         }
     }
 
@@ -32,15 +32,13 @@ public class EnemyHealth : MonoBehaviour
         healthFillImage.fillAmount = fillAmount;
     }
 
-    void Die()
+    void Die(GameObject killer)
     {
         if (prefabAlMorir != null)
         {
             GameObject objetoMuerte = Instantiate(prefabAlMorir, transform.position, Quaternion.identity);
 
-           
             Transform bloquePadre = transform.parent;
-
             while (bloquePadre != null && bloquePadre.GetComponent<MoveBlock>() == null)
             {
                 bloquePadre = bloquePadre.parent;
@@ -52,11 +50,12 @@ public class EnemyHealth : MonoBehaviour
             }
         }
 
-      
-        if (ScoreManager.instance != null)
+       
+        if (ScoreManager.instance != null && killer.CompareTag("PlayerBullet"))
         {
             ScoreManager.instance.AddEnemyPoint();
         }
+
         Destroy(gameObject);
     }
 }

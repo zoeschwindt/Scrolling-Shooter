@@ -104,7 +104,7 @@
                     "name": "",
                     "id": "f26fcd5f-5a8c-4d5f-a855-ef7b9fafe648",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "DropBomb",

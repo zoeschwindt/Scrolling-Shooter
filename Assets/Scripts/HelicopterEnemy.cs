@@ -112,7 +112,7 @@ public class HelicopterEnemy : MonoBehaviour
             EnemyHealth health = GetComponent<EnemyHealth>();
             if (health != null)
             {
-                health.TakeDamage(health.maxHealth);
+                health.TakeDamage(health.maxHealth, gameObject);
             }
             else
             {
