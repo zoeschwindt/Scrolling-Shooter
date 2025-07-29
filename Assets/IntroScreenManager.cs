@@ -6,19 +6,38 @@ public class IntroScreenManager : MonoBehaviour
     public CanvasGroup introCanvas;
     public float fadeDuration = 1f;
     public TypewriterText typewriter;
-
-    public AudioSource gameplayMusic; // Música o sonido del juego después del texto
+    public AudioSource gameplayMusic;
 
     private bool textFinished = false;
 
+    
+    public static bool showIntro = true;
+
     void Start()
     {
-        introCanvas.alpha = 1f;
-        introCanvas.blocksRaycasts = true;
-        introCanvas.interactable = true;
+        if (showIntro)
+        {
+            introCanvas.alpha = 1f;
+            introCanvas.blocksRaycasts = true;
+            introCanvas.interactable = true;
 
-        typewriter.OnFinished += () => textFinished = true;
-        StartCoroutine(ShowIntro());
+            typewriter.OnFinished += () => textFinished = true;
+            StartCoroutine(ShowIntro());
+
+           
+            showIntro = false;
+        }
+        else
+        {
+            
+            introCanvas.alpha = 0f;
+            introCanvas.blocksRaycasts = false;
+            introCanvas.interactable = false;
+            Time.timeScale = 1f;
+
+            if (gameplayMusic != null)
+                gameplayMusic.Play();
+        }
     }
 
     IEnumerator ShowIntro()
@@ -31,7 +50,6 @@ public class IntroScreenManager : MonoBehaviour
         while (!textFinished)
             yield return null;
 
-        // Fade out del panel
         float elapsed = 0f;
         while (elapsed < fadeDuration)
         {
@@ -46,10 +64,7 @@ public class IntroScreenManager : MonoBehaviour
 
         Time.timeScale = 1f;
 
-        // Activar música de juego
         if (gameplayMusic != null)
-        {
             gameplayMusic.Play();
-        }
     }
 }

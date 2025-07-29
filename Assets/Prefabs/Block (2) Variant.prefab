@@ -331,80 +331,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6614730409896694766, guid: 72076e355d670ec4b9978f4451af00b9, type: 3}
   m_PrefabInstance: {fileID: 3398063485652653901}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4035359652151309366
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3087430737360884764}
-    m_Modifications:
-    - target: {fileID: 6991409241467709750, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: helicopterTarget
-      value: 
-      objectReference: {fileID: 3897787827121577690, guid: cac1cc881ddea1e4eb6cfad7d0626472, type: 3}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0000076293945
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -46.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919700125113120325, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_Name
-      value: Enemy2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919700125113120325, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919700125113120325, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
---- !u!4 &5224895287792998601 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8107311306558647551, guid: dcc60dbdfa7d5394499e971b96a8c810, type: 3}
-  m_PrefabInstance: {fileID: 4035359652151309366}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6538476775095100018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,9 +390,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8099042343726610030, guid: 2bb5c80c7b7eb824188ab49689bac9de, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5224895287792998601}
     - targetCorrespondingSourceObject: {fileID: 8099042343726610030, guid: 2bb5c80c7b7eb824188ab49689bac9de, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2070946445384995270}

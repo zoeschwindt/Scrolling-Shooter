@@ -13,6 +13,7 @@ TagManager:
   - Humvee
   - Bomba
   - DeathWall
+  - Meta
   layers:
   - Default
   - TransparentFX

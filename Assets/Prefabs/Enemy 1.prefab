@@ -795,7 +795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   stopDistance: 25
-  shootingDistance: 30
+  shootingDistance: 40
   speed: 20
   bulletPrefab: {fileID: 728230889742716418, guid: 89189182ff0ea53449037daa0df341af, type: 3}
   firePoints:
@@ -821,6 +821,7 @@ MonoBehaviour:
   currentHealth: 100
   prefabAlMorir: {fileID: 5103953823925615597, guid: ca313a44cb34dc949a69864ec276364d, type: 3}
   healthFillImage: {fileID: 7046537928638098598}
+  smokeAndSoundEffect: {fileID: 7666304755428957653, guid: 8ec99b99ec0880045b78af6ebb5a450e, type: 3}
 --- !u!136 &8632509990040781630
 CapsuleCollider:
   m_ObjectHideFlags: 0

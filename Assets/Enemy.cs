@@ -72,20 +72,16 @@ public class Enemy : MonoBehaviour
 
     void Disparar()
     {
-        if (proyectilPrefab != null)
+        if (proyectilPrefab != null && puntoDisparo != null && objetivo != null)
         {
-
-            if (puntoDisparo != null)
+            GameObject proyectil = Instantiate(proyectilPrefab, puntoDisparo.position, Quaternion.identity);
+            Rigidbody rb = proyectil.GetComponent<Rigidbody>();
+            if (rb != null)
             {
-                GameObject proyectil1 = Instantiate(proyectilPrefab, puntoDisparo.position, puntoDisparo.rotation);
-                Rigidbody rb1 = proyectil1.GetComponent<Rigidbody>();
-                if (rb1 != null)
-                {
-                    rb1.linearVelocity = puntoDisparo.forward * 50f;
-                }
+                Vector3 direccion = (objetivo.position - puntoDisparo.position).normalized;
+                direccion.y = 0; // opcional, para mantener en el plano horizontal
+                rb.linearVelocity = direccion * 50f;
             }
-
-
         }
     }
 }

@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class MainMenu : MonoBehaviour
 {
-
     public void Jugar()
     {
         SceneManager.LoadScene("Nivel");
@@ -19,6 +19,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Nivel");
     }
 
+    public void JugarDesdeCero()
+    {
+        IntroScreenManager.showIntro = true; 
+        SceneManager.LoadScene("Nivel");
+    }
+
     public void VolverMenu()
     {
         SceneManager.LoadScene("Menu");
@@ -28,5 +34,4 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
-
 }

@@ -50,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
             }
         }
 
-       
+
         if (ScoreManager.instance != null && killer.CompareTag("PlayerBullet"))
         {
             ScoreManager.instance.AddEnemyPoint();
