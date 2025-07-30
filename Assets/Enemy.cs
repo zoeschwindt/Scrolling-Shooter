@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour
     [Header("Disparo")]
     public GameObject proyectilPrefab;
     public Transform puntoDisparo;
- 
     public float tiempoEntreDisparos = 1.5f;
 
     private NavMeshAgent agente;
@@ -35,17 +34,13 @@ public class Enemy : MonoBehaviour
             {
                 float distancia = Vector3.Distance(transform.position, objetivo.position);
 
-
+                // Movimiento: solo si no está demasiado cerca
                 if (distancia <= distanciaParaPerseguir && distancia > distanciaMinimaAlJugador)
-                {
                     agente.SetDestination(objetivo.position);
-                }
                 else
-                {
                     agente.ResetPath();
-                }
 
-
+                // Rotación hacia el objetivo
                 Vector3 direccion = (objetivo.position - transform.position).normalized;
                 direccion.y = 0;
 
@@ -55,8 +50,8 @@ public class Enemy : MonoBehaviour
                     transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, Time.deltaTime * 40f);
                 }
 
-
-                if (distancia <= distanciaParaPerseguir && distancia > distanciaMinimaAlJugador)
+                // Disparar siempre que esté dentro del rango de persecución
+                if (distancia <= distanciaParaPerseguir)
                 {
                     if (Time.time >= tiempoUltimoDisparo)
                     {

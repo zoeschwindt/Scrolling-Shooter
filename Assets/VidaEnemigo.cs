@@ -17,9 +17,9 @@ public class VidaEnemigo : MonoBehaviour
     private Image barraVida;
     private GameObject instanciaBarra;
 
-    [Header("Sonido")]
+    [Header("Sonido de muerte")]
+    public AudioSource audioSource;         // Este AudioSource debe estar en la escena
     public AudioClip sonidoMuerte;
-    private AudioSource audioSource;
 
     void Start()
     {
@@ -34,11 +34,8 @@ public class VidaEnemigo : MonoBehaviour
                 Debug.LogWarning("No se encontró el componente Image llamado 'HealthFill'");
         }
 
-
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-            audioSource = gameObject.AddComponent<AudioSource>();
-
+        // Ya no se usa GetComponent<AudioSource>()
+        // El AudioSource se debe asignar desde el Inspector
         ActualizarBarra();
     }
 
@@ -63,7 +60,17 @@ public class VidaEnemigo : MonoBehaviour
 
     void Morir()
     {
+        if (GameManager.instancia != null)
+            GameManager.instancia.SumarPuntoEnemigo();
 
+        if (sonidoMuerte != null)
+        {
+            GameObject tempAudio = new GameObject("TempAudio");
+            AudioSource tempSource = tempAudio.AddComponent<AudioSource>();
+            tempSource.clip = sonidoMuerte;
+            tempSource.Play();
+            Destroy(tempAudio, sonidoMuerte.length);
+        }
 
         Destroy(instanciaBarra);
         Destroy(gameObject);
