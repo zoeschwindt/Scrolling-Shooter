@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("UI")]
     public Image healthBarImage;
-    public GameObject panelDerrota;
 
     [Header("Sonido de daño")]
     public AudioSource audioSource;
@@ -37,7 +37,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         UpdateHealthBar();
         UpdateDamageEffects();
-        panelDerrota.SetActive(false);
 
         if (smokeEffect1 != null) smokeEffect1.SetActive(false);
         if (smokeEffect2 != null) smokeEffect2.SetActive(false);
@@ -96,7 +95,6 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            // Vida mayor a 50: desactiva efectos y resetea flags
             if (smokeEffect1 != null) smokeEffect1.SetActive(false);
             if (smokeEffect2 != null) smokeEffect2.SetActive(false);
             if (smokeEffect3 != null) smokeEffect3.SetActive(false);
@@ -108,15 +106,16 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        panelDerrota.SetActive(true);
-        Time.timeScale = 0f;
+        // Guardar la última escena para poder reiniciar después
+        PlayerPrefs.SetString("LastScene", SceneManager.GetActiveScene().name);
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
+        // Reproducir sonido de Game Over (opcional antes de cambiar de escena)
         if (gameOverClip != null && gameOverAudioSource != null)
         {
             gameOverAudioSource.PlayOneShot(gameOverClip);
         }
+
+        // Cargar escena de "Moriste"
+        SceneManager.LoadScene("Muerte"); 
     }
 }

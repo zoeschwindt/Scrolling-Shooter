@@ -10,6 +10,8 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Referencias")]
     public Transform cameraTransform;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
     public Weapondos weapon;
 
     private Rigidbody rb;
@@ -25,10 +27,27 @@ public class PlayerMove : MonoBehaviour
 
     private Animator animator;
 
-    // NUEVO PARA DISPARO CONTINUO
+    // Disparo continuo
     private bool isShootingHeld = false;
     private float shootCooldown = 0.2f;
     private float shootTimer = 0f;
+
+    // WALLRUN
+    [Header("Wallrun")]
+    public float wallRunForce = 5f;
+    public float wallJumpForce = 7f;
+    public float wallDetectionDistance = 1f;
+    public LayerMask wallLayer;
+    private bool isWallRunning = false;
+    private bool wallOnRight = false;
+    private bool wallOnLeft = false;
+    private Vector3 lastWallNormal;
+
+    // WALLCLIMB
+    [Header("Wallclimb")]
+    public float climbSpeed = 3f;
+    public float climbRayLength = 1f;
+    private bool isClimbing = false;
 
     private void Start()
     {
@@ -56,62 +75,66 @@ public class PlayerMove : MonoBehaviour
 
         RotateCamera();
         CheckGrounded();
+        CheckForWall();
 
-        if (jumpAction != null && jumpAction.triggered && isGrounded)
+        if (jumpAction.triggered)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            animator.SetTrigger("JumpTrig");
+            if (isWallRunning)
+                WallJump();
+            else if (isGrounded)
+                Jump();
+            else if (CanClimb())
+                isClimbing = true;
         }
 
-        // Animación de disparo activada solo si se mantiene apretado
         animator.SetBool("isShooting", isShootingHeld);
 
-        // Disparar solo si está presionado y pasaron los segundos del cooldown
         if (isShootingHeld)
         {
             shootTimer -= Time.deltaTime;
-
             if (shootTimer <= 0f)
             {
-                weapon.Fire(); // Dispara el arma
-                shootTimer = shootCooldown; // Reinicia el tiempo
+                weapon.Fire();
+                shootTimer = shootCooldown;
             }
         }
     }
 
-    [System.Obsolete]
     private void FixedUpdate()
     {
         if (!inputEnabled) return;
 
-        // Solo moverse si no está disparando
+        if (isClimbing)
+        {
+            ClimbWall();
+            return;
+        }
+
+        if (isWallRunning)
+        {
+            WallRun();
+            return;
+        }
+
         if (!isShootingHeld)
             MovePlayer();
         else
             StopPlayer();
     }
 
-    [System.Obsolete]
     private void StopPlayer()
     {
-        // Frena completamente el movimiento en X y Z (mantiene Y por gravedad o salto)
-        Vector3 velocity = rb.velocity;
+        Vector3 velocity = rb.linearVelocity;
         velocity.x = 0f;
         velocity.z = 0f;
-        rb.velocity = velocity;
-
+        rb.linearVelocity = velocity;
         animator.SetBool("isMoving", false);
     }
 
-
-
-
-    [System.Obsolete]
     private void MovePlayer()
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
 
-        // Movimiento relativo a la cámara
         Vector3 camForward = cameraTransform.forward;
         Vector3 camRight = cameraTransform.right;
 
@@ -121,13 +144,11 @@ public class PlayerMove : MonoBehaviour
         camRight.Normalize();
 
         moveDirection = camForward * input.y + camRight * input.x;
-
         Vector3 velocity = moveDirection.normalized * moveSpeed;
-        velocity.y = rb.velocity.y;
-        rb.velocity = velocity;
+        velocity.y = rb.linearVelocity.y;
+        rb.linearVelocity = velocity;
 
-        bool isMoving = moveDirection.magnitude > 0.1f;
-        animator.SetBool("isMoving", isMoving);
+        animator.SetBool("isMoving", moveDirection.magnitude > 0.1f);
     }
 
     private void RotateCamera()
@@ -136,17 +157,90 @@ public class PlayerMove : MonoBehaviour
         transform.Rotate(Vector3.up * look.x);
     }
 
-    private void CheckGrounded()
+    private void Jump()
     {
-        Ray ray = new Ray(transform.position, Vector3.down);
-        isGrounded = Physics.Raycast(ray, 1.1f);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        animator.SetTrigger("JumpTrig");
     }
 
-    [System.Obsolete]
+    private void CheckGrounded()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void CheckForWall()
+    {
+        wallOnRight = Physics.Raycast(transform.position, transform.right, out RaycastHit rightHit, wallDetectionDistance, wallLayer);
+        wallOnLeft = Physics.Raycast(transform.position, -transform.right, out RaycastHit leftHit, wallDetectionDistance, wallLayer);
+
+        Vector2 input = moveAction.ReadValue<Vector2>();
+
+        if ((wallOnRight || wallOnLeft) && !isGrounded && !isClimbing && input.y > 0.1f)
+        {
+            isWallRunning = true;
+            rb.useGravity = false;
+            lastWallNormal = wallOnRight ? rightHit.normal : leftHit.normal;
+        }
+        else if (!isClimbing)
+        {
+            isWallRunning = false;
+            rb.useGravity = true;
+        }
+    }
+
+    private void WallRun()
+    {
+        Vector3 wallForward = Vector3.Cross(lastWallNormal, Vector3.up);
+        if (Vector3.Dot(wallForward, transform.forward) < 0)
+            wallForward = -wallForward;
+
+        Vector3 wallRunVelocity = wallForward.normalized * wallRunForce;
+        wallRunVelocity.y = 0.5f; // mantener flotando
+
+        rb.linearVelocity = wallRunVelocity;
+
+        animator.SetBool("isMoving", true);
+    }
+
+    private void WallJump()
+    {
+        // Direcci�n de salto: alejarse de la pared + fuerte impulso hacia arriba
+        Vector3 jumpDirection = (lastWallNormal * 1.5f + Vector3.up * 2f).normalized;
+
+        // Cancelar velocidad previa para no arrastrar movimiento
+        rb.linearVelocity = Vector3.zero;
+
+        // Aplicar fuerza
+        rb.AddForce(jumpDirection * wallJumpForce, ForceMode.Impulse);
+
+        // Salir del wallrun
+        isWallRunning = false;
+        rb.useGravity = true;
+    }
+
+
+    private bool CanClimb()
+    {
+        if (isGrounded || isWallRunning) return false;
+        return Physics.Raycast(transform.position, transform.forward, climbRayLength, wallLayer);
+    }
+
+    private void ClimbWall()
+    {
+        rb.useGravity = false;
+        rb.linearVelocity = new Vector3(0, climbSpeed, 0);
+
+        if (isGrounded || !Physics.Raycast(transform.position, transform.forward, climbRayLength, wallLayer))
+        {
+            isClimbing = false;
+            rb.useGravity = true;
+        }
+    }
+
     public void Die()
     {
         inputEnabled = false;
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         animator.SetTrigger("Morir");
     }
 }
