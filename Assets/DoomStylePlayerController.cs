@@ -1,9 +1,9 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
+ï»¿using UnityEngine;
 
 public class DoomStylePlayerController : MonoBehaviour
 {
     public float mouseSensitivity = 2f;
+    public bool puedeMover = true;
 
     void Start()
     {
@@ -13,9 +13,9 @@ public class DoomStylePlayerController : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        if (!puedeMover || !CameraControlManager.Instance.puedeRotar) return;
 
-        // Rota todo el jugador (y por ende también cámara y arma)
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         transform.Rotate(Vector3.up * mouseX);
     }
 }

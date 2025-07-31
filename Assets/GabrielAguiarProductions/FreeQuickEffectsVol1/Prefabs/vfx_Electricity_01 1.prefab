@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7373644630128741146}
   - component: {fileID: 2193125836256819593}
   m_Layer: 0
-  m_Name: vfx_Electricity_01
+  m_Name: vfx_Electricity_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4774,9 +4774,6 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

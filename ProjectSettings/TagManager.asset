@@ -15,6 +15,7 @@ TagManager:
   - DeathWall
   - Meta
   - Final
+  - Plataforma
   layers:
   - Default
   - TransparentFX

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MouseLookController : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class MouseLookController : MonoBehaviour
 
     void Update()
     {
+        if (!CameraControlManager.Instance.puedeRotar) return;
+
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer))
