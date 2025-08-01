@@ -20,6 +20,7 @@ public class VidaJugador : MonoBehaviour
     public Transform puntoHumo; // lugar donde aparece el humo
     private GameObject humoInstanciado;
     public int umbralHumo = 59;
+    public int VidaActual => vidaActual;
 
     [Header("Sonido humo")]
     public AudioClip sonidoHumo;

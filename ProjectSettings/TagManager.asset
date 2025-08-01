@@ -16,6 +16,7 @@ TagManager:
   - Meta
   - Final
   - Plataforma
+  - Bullet
   layers:
   - Default
   - TransparentFX
