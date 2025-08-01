@@ -1,17 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class VictoryTrigger : MonoBehaviour
+public class MostrarPanelVictoriaAlTocar : MonoBehaviour
 {
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            
-            IntroScreenManager.showIntro = true;
-
-            
-            SceneManager.LoadScene("Nivel3");
+            SceneManager.LoadScene("Nivel4");  
         }
     }
 }

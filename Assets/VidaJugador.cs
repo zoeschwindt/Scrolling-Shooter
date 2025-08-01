@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class VidaJugador : MonoBehaviour
 {
@@ -17,14 +19,14 @@ public class VidaJugador : MonoBehaviour
     [Header("Efectos especiales")]
     public bool activarHumoEnEsteNivel = false;
     public GameObject humoPrefab;
-    public Transform puntoHumo; // lugar donde aparece el humo
+    public Transform puntoHumo;
     private GameObject humoInstanciado;
     public int umbralHumo = 59;
     public int VidaActual => vidaActual;
 
     [Header("Sonido humo")]
     public AudioClip sonidoHumo;
-    public AudioSource audioSourceHumo; // Público, asignar solo este en inspector
+    public AudioSource audioSourceHumo;
 
     void Start()
     {
@@ -68,7 +70,7 @@ public class VidaJugador : MonoBehaviour
         if (vidaActual <= 0)
         {
             vidaActual = 0;
-            Morir();
+            StartCoroutine(MorirConRetraso());
         }
 
         ActualizarBarra();
@@ -91,17 +93,20 @@ public class VidaJugador : MonoBehaviour
         }
     }
 
-    void Morir()
+    IEnumerator MorirConRetraso()
     {
         Debug.Log("El jugador ha muerto");
+
+        PlayerPrefs.SetString("LastScene", SceneManager.GetActiveScene().name);
+        PlayerPrefs.Save();
 
         Animator anim = GetComponent<Animator>();
         if (anim != null)
             anim.SetTrigger("Morir");
 
-        if (panelPerdiste != null)
-            panelPerdiste.SetActive(true);
+        // Espera el tiempo de la animación (ajustá este valor al largo de tu animación)
+        yield return new WaitForSeconds(1.5f);
 
-        Time.timeScale = 0f;
+        SceneManager.LoadScene("Muerte");
     }
 }

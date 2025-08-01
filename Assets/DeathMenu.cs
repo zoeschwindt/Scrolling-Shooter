@@ -10,6 +10,7 @@ public class DeathMenu : MonoBehaviour
     }
     public void Retry()
     {
+        IntroScreenManager.showIntro = false;
         string lastScene = PlayerPrefs.GetString("LastScene", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(lastScene);
     }
