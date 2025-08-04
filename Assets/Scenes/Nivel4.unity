@@ -1424,7 +1424,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!95 &595747170
 Animator:
   serializedVersion: 7
@@ -3146,7 +3146,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1248075722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3856,7 +3856,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1547104165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4452,7 +4452,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1667961562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4837,7 +4837,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1750814681
 CapsuleCollider:
   m_ObjectHideFlags: 0

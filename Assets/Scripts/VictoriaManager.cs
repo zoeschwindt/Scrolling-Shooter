@@ -9,16 +9,25 @@ public class VictoriaManager : MonoBehaviour
 
     void Start()
     {
+        // Ocultar el portal y el cursor al iniciar
         if (portalVictoria != null)
             portalVictoria.SetActive(false);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void EnemigoEliminado()
     {
         enemigosEliminados++;
+
         if (enemigosEliminados >= enemigosTotales && portalVictoria != null)
         {
-            portalVictoria.SetActive(true); // Mostrar el portal
+            portalVictoria.SetActive(true);
+
+            // Mostrar el cursor al activar el portal
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
